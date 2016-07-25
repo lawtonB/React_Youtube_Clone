@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
 import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
+import VideoDetail from './components/video_detail';
 const API_KEY = "AIzaSyAF0k00HNVntnqGQhax1auOh4E0dHPH4BY";
 
-//create a new component. components produce html. When a component is created it is a class/type of component ie many APP instances can be rendered
+//class create a new component. components produce html. When a component is created it is a class/type of component ie many instances of App can be rendered
 
 class App extends Component {
   constructor(props){
@@ -13,7 +14,7 @@ class App extends Component {
 
     this.state = { videos: [] };
 
-    YTSearch({key: API_KEY, searchTerm: 'captain beefheart'}, (videos) => {
+    YTSearch({key: API_KEY, term: 'captain beefheart'}, (videos) => {
     this.setState({ videos: videos })
     console.log(videos);
     })
@@ -24,7 +25,7 @@ class App extends Component {
       return (
     <div>
       <SearchBar />
-       
+      <VideoDetail video={this.state.videos[0]}/>
       <VideoList videos={this.state.videos}/>
     </div>
     );
