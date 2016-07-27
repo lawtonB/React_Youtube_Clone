@@ -17,23 +17,29 @@ class App extends Component {
       selectedVideo: null
      };
 
-    YTSearch({key: API_KEY, term: 'captain beefheart'}, (videos) => {
+     this.videoSearch('dogs');
+}
+    
+
+  videoSearch(term) {
+    YTSearch({key: API_KEY, term: term}, (videos) => {
     this.setState({ 
       videos: videos,
       selectedVideo: videos[0] 
-    });
-    console.log(videos);
-    })
-  }
+        });
+      });
+    }
+
+    
 
     render() {
       // prop: pass data from parent component App to child <VideoList> with this.state.videos
 
-      //onVideoSelect updates app's state
+      //onVideoSelect updates app's state using this.setState
 
       return (
     <div>
-      <SearchBar />
+      <SearchBar onSearchTermChange={term => this.videoSearch(term)}/>
       <VideoDetail video={this.state.selectedVideo}/>
       <VideoList 
         onVideoSelect={selectedVideo => this.setState({selectedVideo}) }

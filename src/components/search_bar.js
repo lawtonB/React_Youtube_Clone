@@ -14,12 +14,19 @@ render() {
       //event handler onChange sets searchTerm to event.target.value
       // value of input: {this.state.searchTerm}
       // by setting value to be controlled by state <input> becomes a "controlled" component
-    <div> 
-      <input 
+    <div className="search-bar"> 
+      <input
+      autofocus=""
       value={this.state.searchTerm}
-      onChange={(event) => this.setState({ searchTerm: event.target.value })} />
+      onChange={(event) => this.onInputChange(event.target.value)} />
     </div>
       );  
+    }
+
+    onInputChange(searchTerm){
+      this.setState({searchTerm});
+      this.props.onSearchTermChange(searchTerm);
+
     }
   }
 
