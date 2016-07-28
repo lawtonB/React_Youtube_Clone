@@ -1,6 +1,8 @@
 import React from 'react';
 import VideoListItem from './video_list_item';
 
+//const VideoList is an example of a 'functional' component. It does not change and has no state. Instead it takes some number of properties and returns static JSX 
+
 const VideoList = (props) => {
 const videoItems = props.videos.map((video) => {
     //when using map to create a list React requires a unique key; in this case the key is the unique etag property of video object

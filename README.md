@@ -1,25 +1,18 @@
-# ReduxSimpleStarter
+# React Youtube Clone
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+This project is based on stephen Griders React/Redux tutorial. It uses JSX, the React framework and the Youtube API to create a fast efficient Youtube clone which displays the top 5 videos from the Youtube API based on a user search string.
 
 ###Getting Started###
 
-There are two methods for getting started with this repo.
+to run project clone repo and run
 
-####Familiar with Git?#####
-Checkout this repo, install dependencies, then start the gulp process with the following:
+npm install
+npm start
 
-```
-	> git clone git@github.com:StephenGrider/ReduxSimpleStarter.git
-	> cd ReduxSimpleStarter
-	> npm install
-	> npm start
-```
+from command line inside root of project
 
-####Not Familiar with Git?#####
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
+# Contact Info #
 
-```
-	> npm install
-	> npm start
-```
+Lawton browning
+lawton.a.browning@gmail.com
+https://www.linkedin.com/in/lawtonbrowning

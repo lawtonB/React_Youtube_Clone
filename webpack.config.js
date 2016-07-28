@@ -1,3 +1,5 @@
+var webpack = require('webpack');
+
 module.exports = {
   entry: [
     './src/index.js'
@@ -16,6 +18,11 @@ module.exports = {
       }
     }]
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      'youtube_Api': JSON.stringify(process.env.API_KEY),
+    })
+  ],
   resolve: {
     extensions: ['', '.js', '.jsx']
   },

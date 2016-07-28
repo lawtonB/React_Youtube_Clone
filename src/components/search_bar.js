@@ -8,6 +8,10 @@ class SearchBar extends React.Component {
       this.state = {searchTerm: ''};
   }
 
+  componentDidMount() {
+    this.refs.myInput.focus();
+  }
+
 render() {
   return (
       //manipulate state using setState 
@@ -16,7 +20,7 @@ render() {
       // by setting value to be controlled by state <input> becomes a "controlled" component
     <div className="search-bar"> 
       <input
-      autofocus=""
+      ref='myInput'
       value={this.state.searchTerm}
       onChange={(event) => this.onInputChange(event.target.value)} />
     </div>
